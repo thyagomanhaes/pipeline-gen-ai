@@ -2,6 +2,8 @@ import streamlit as st
 from contract import Sales
 from pydantic import ValidationError
 
+from database import save_to_postgres
+
 def main():
     st.title("CRM System")
 
@@ -10,7 +12,7 @@ def main():
     date = st.date_input("Date")
     hour = st.time_input("Hour")
     value = st.number_input("Value")
-    quantity = st.number_input("Quantity")
+    quantity = st.number_input("Quantity", value=0)
     product = st.text_input("Product")
 
     if st.button("Save"):
@@ -25,7 +27,8 @@ def main():
                 product=product
             )
             
-            st.success("Logged in as {}".format(email))
+            save_to_postgres(sales)
+
             st.write(sales)
         
         except  ValidationError as e:

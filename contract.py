@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, time, date
 from typing import Tuple
 
 from pydantic import BaseModel, EmailStr, PositiveFloat, PositiveInt
@@ -11,8 +11,8 @@ class ProductEnum(str, Enum):
 
 class Sales(BaseModel):
     email: EmailStr
-    date: datetime
-    hour: datetime
+    date: date
+    hour: time
     value: PositiveFloat
     quantity: PositiveInt
     product: str
