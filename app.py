@@ -1,5 +1,6 @@
 import streamlit as st
-
+from contract import Sales
+from pydantic import ValidationError
 
 def main():
     st.title("CRM System")
@@ -12,8 +13,23 @@ def main():
     quantity = st.number_input("Quantity")
     product = st.text_input("Product")
 
-    if st.button("Login"):
-        st.success("Logged in as {}".format(email))
+    if st.button("Save"):
+        
+        try:
+            sales = Sales(
+                email=email,
+                date=date,
+                hour=hour,
+                value=value,
+                quantity=quantity,
+                product=product
+            )
+            
+            st.success("Logged in as {}".format(email))
+            st.write(sales)
+        
+        except  ValidationError as e:
+            st.error(f"Error found: {e}")
 
-
-main()
+if __name__ == "__main__":
+    main()
