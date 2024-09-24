@@ -12,7 +12,31 @@ Activate the virtual environment:
 ```source .venv/Scripts/activate```
 
 Install the requeriments:
-```pip install requirements.txt```
+```
+pip install requirements.txt
+```
 
 Run the streamlit app:
-```streamlit run app.py```
+```
+streamlit run app.py
+```
+
+```
+pip install mkdocs mkdocs-material mkdocstrings mkdocstrings-python
+```
+
+```
+mkdocs new .
+```
+
+```
+mkdocs serve
+```
+
+```
+mkdocs build
+```
+
+```
+mkdocs gh-deploy
+```

@@ -10,6 +10,17 @@ class ProductEnum(str, Enum):
     LLAMA3 = "LLAMA3"
 
 class Sales(BaseModel):
+    """
+    This is the sales class that will be used in the contract
+
+    Args:
+        email: EmailStr
+        date: date
+        hour: time
+        value: PositiveFloat
+        quantity: PositiveInt
+        product: str
+    """
     email: EmailStr
     date: date
     hour: time
