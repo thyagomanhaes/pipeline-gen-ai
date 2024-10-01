@@ -40,3 +40,15 @@ mkdocs build
 ```
 mkdocs gh-deploy
 ```
+
+Task 1:
+Migrate db from render to AWS
+
+Task2: 
+Create medallion architecture: bronze, silver, and gold
+
+Task 3:
+dbt-core to create views
+
+Task 4:
+SQL and notebook in BRIEFER# pipeline-gen-ai-datawarehouse
